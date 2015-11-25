@@ -21,3 +21,20 @@ A traditional Chinese term dictionary for tokenizers
   - A simple script to tokenize articles
   - Sample usage: 
     python tokenize-article.py --content="中文輸入法是指為了將漢字輸入電腦或手機等電子裝置而採用的編碼方法，是中文資訊處理的重要技術。"
+  - Sample output:
+    Tokenizing...
+    Result:
+    中文輸入法
+    指為
+    了將
+    漢字
+    輸入
+    電腦
+    手機
+    電子裝置
+    採用
+    編碼
+    方法
+    中文資訊處理
+    重要
+    技術
