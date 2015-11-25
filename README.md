@@ -9,6 +9,7 @@ A traditional Chinese term dictionary for tokenizers
 * zh-wiki-dict/src/wiki-to-term.py
   - Generate terms from the titles of Chinese Wikipedia
     - I assume the Wikipedia is stored locally in MySQL or MariaDB.  Edit zh-wiki-dict/etc/mariadb_settings.json to setup the host, db, user, and pwd.
+    - The zhwiki database dump is at: https://dumps.wikimedia.org/backup-index.html
   - The titles are transformed to traditional Chinese and Taiwan's common usage by OpenCC
     - OpenCC: https://github.com/BYVoid/OpenCC
   - The output term list is located at zh-wiki-dict/var/tw-wiki-dict.dict
