@@ -51,6 +51,10 @@ def process_special_chars(title):
     return title
 
 
+def is_all_chinese_chars(s):
+    return all(u'\u4e00' <= c <= u'\u9fff' for c in s)
+
+
 def main(argv):
     check_args(argv)
 
@@ -59,15 +63,15 @@ def main(argv):
         d = json.load(open('../var/dict-revised.json'))
         for i, ele in enumerate(d):
             title = ele['title']
-            title = process_special_chars(title)
-            if len(title) > 1:
+            #title = process_special_chars(title)
+            if len(title) > 1 and is_all_chinese_chars(title):
                 f.write("%s\n" % (title.encode("utf-8")))
 
         # parse from other terms (e.g., 成語，諺語，地名，城市名，節日，節氣, etc.)
         for i, ele in enumerate(json.load(open('../var/dict-cat.json'))):
             for title in ele['entries']:
-                title = process_special_chars(title)
-                if len(title) > 1:
+                #title = process_special_chars(title)
+                if len(title) > 1 and is_all_chinese_chars(title):
                     f.write("%s\n" % (title.encode("utf-8")))
 
 
