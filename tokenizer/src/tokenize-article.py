@@ -44,7 +44,7 @@ def is_chinese_char(w):
     return u'\u4e00' <= w <= u'\u9fff'
 
 
-def keey_only_chinese_and_alphanumeric(contents):
+def keep_only_chinese_and_alphanumeric(contents):
     cleaned_contents = ''
     for w in contents:
         if is_chinese_char(w) or w.isalnum():
@@ -55,7 +55,7 @@ def keey_only_chinese_and_alphanumeric(contents):
 
 
 def show_terms(content, min_len=2):
-    content = keey_only_chinese_and_alphanumeric(content)
+    content = keep_only_chinese_and_alphanumeric(content)
     for term in jieba.cut(content, cut_all=False):    # accurate mode
         if len(term) >= min_len and term.strip() != '':
             print term
@@ -63,7 +63,7 @@ def show_terms(content, min_len=2):
 
 def main(argv):
     check_args(argv)
-   
+
     print 'Loading dictionary...'
     jieba.load_userdict('../var/tw-dict.dict')
 
