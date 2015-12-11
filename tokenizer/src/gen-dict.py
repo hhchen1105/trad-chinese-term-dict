@@ -43,7 +43,9 @@ def main(argv):
     check_args(argv)
 
     all_terms = set()
-    dic_srcs = ['../../moe-dict/var/tw-edu-dict.dict', '../../zh-wiki-dict/var/tw-wiki-dict.dict']
+    dic_srcs = ['../../moe-dict/var/tw-edu-dict.dict',
+                '../../zh-wiki-dict/var/tw-wiki-dict.dict',
+                '../../momo-search-dict/var/momo-search-terms-min-freq-5.dict']
     for dic_src in dic_srcs:
         with open(dic_src) as f_src:
             for line in f_src:
